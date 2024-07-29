@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Report</title>
+    <link rel="stylesheet" href="lab_report.css">
+</head>
+
+<body>
+    <div class="lab-report">
+        <h2>Lab Report</h2>
+
+        <script>
+            const userData = JSON.parse(localStorage.getItem('appointmentData')) || {};
+            const labResults = {
+                "WBC Count": "8.0 x 10^9/L",
+                "RBC Count": "4.5 x 10^12/L",
+
+            };
+
+            document.write('<section class="patient-info">');
+            document.write('<h3>Patient Information</h3>');
+            document.write(`<p><strong>Name:</strong> ${userData.name || ''}</p>`);
+            document.write(`<p><strong>Patient ID:</strong> ${userData.patientID || ''}</p>`);
+            document.write(`<p><strong>Date of Birth:</strong> ${userData.dateOfBirth || ''}</p>`);
+            document.write(`<p><strong>Gender:</strong> ${userData.gender || ''}</p>`);
+            document.write(`<p><strong>Contact Information:</strong> ${userData.phone || ''}</p>`);
+            document.write('</section>');
+
+            document.write('<section class="test-info">');
+            document.write('<h3>Test Information</h3>');
+            document.write(`<p><strong>Test Name:</strong> Complete Blood Count (CBC)</p>`);
+            document.write(`<p><strong>Test Date:</strong> ${new Date().toLocaleDateString()}</p>`);
+            document.write(`<p><strong>Test Type:</strong> Blood Test</p>`);
+            document.write(`<p><strong>Test Code:</strong> T123456</p>`);
+            document.write(`<p><strong>Ordering Physician:</strong> ${userData.orderingPhysician || ''}</p>`);
+            document.write(`<p><strong>Lab Technician:</strong> Jane Doe</p>`);
+            document.write(`<p><strong>Test Status:</strong> Completed</p>`);
+            document.write('</section>');
+
+            document.write('<section class="test-results">');
+            document.write('<h3>Test Results</h3>');
+            document.write('<table>');
+            document.write('<tr><th>Test Component</th><th>Result</th></tr>');
+            for (const [testComponent, result] of Object.entries(labResults)) {
+                document.write(`<tr><td>${testComponent}</td><td>${result}</td></tr>`);
+            }
+            document.write('</table>');
+            document.write('</section>');
+
+            document.write('<section class="interpretation">');
+            document.write('<h3>Interpretation/Comments</h3>');
+            document.write('<p>The results are within the normal range. No abnormalities detected.</p>');
+            document.write('</section>');
+
+            document.write('<section class="additional-notes">');
+            document.write('<h3>Additional Notes</h3>');
+            document.write('<p>No further action required. Follow-up in 6 months for routine testing.</p>');
+            document.write('</section>');
+        </script>
+    </div>
+</body>
+
+</html>

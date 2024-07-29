@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    float: left;
+    display: flex;
+    color: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#logo {
+    max-height: 60px;
+    margin-right: 800px;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-container {
+    flex: 1;
+    max-width: 25%;
+    margin-top: 50px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.text-container {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+}
+
+#signButton {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+#signButton:hover {
+    background-color: #0056b3;
+}
+
+#loginButton {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#loginButton:hover {
+    background-color: #0056b3;
+}
+
+
+
+@media (max-width: 768px) {
+    #logo {
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+    }
+
+    .image-container,
+    .text-container {
+        max-width: 100%;
+    }
+}
+
+/* ----- about us section-----*/
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.about-us {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.intro,
+.mission-vision,
+.team,
+.history {
+    margin-bottom: 40px;
+}
+
+h1,
+h2 {
+    color: #0056b3;
+}
+
+h3 {
+    color: #333;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mission,
+.vision {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-member {
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .mission,
+    .vision {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .team-members {
+        justify-content: center;
+    }
+}
+
+
+/* ------ Footer section ------*/
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+
+}
+
+.footer-contacts,
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contacts li,
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-contacts li strong {
+    margin-right: 5px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid #444;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+}

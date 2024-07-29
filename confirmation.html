@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation</title>
+    <link rel="stylesheet" href="confirmation.css">
+    <style>
+        /* Your existing styles */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="appointment-box" id="appointmentDetails">
+            <h2>Appointment Details</h2>
+            <!-- Appointment details will be inserted here -->
+        </div>
+
+        <button class="confirm-button" onclick="confirmAppointment()">Confirm Appointment</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var appointmentData = JSON.parse(localStorage.getItem('appointmentData'));
+            if (appointmentData) {
+                var detailsContainer = document.getElementById('appointmentDetails');
+                detailsContainer.innerHTML = `
+                    <p><strong>Name:</strong> ${appointmentData.name}</p>
+                    <p><strong>Phone:</strong> ${appointmentData.phone}</p>
+                    <p><strong>Gender:</strong> ${appointmentData.gender}</p>
+                    <p><strong>Specialty:</strong> ${appointmentData.specialty}</p>
+                    <p><strong>Date:</strong> ${appointmentData.date}</p>
+                    <p><strong>Time:</strong> ${appointmentData.time}</p>
+                `;
+            } else {
+                document.getElementById('appointmentDetails').innerHTML = '<p>No appointment details found.</p>';
+            }
+        });
+
+        function confirmAppointment() {
+            var appointmentData = JSON.parse(localStorage.getItem('appointmentData'));
+            if (appointmentData) {
+                // Store the confirmed appointment data in localStorage or database
+                var appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+                appointments.push(appointmentData);
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+
+                // Optionally clear the appointmentData from localStorage
+                localStorage.removeItem('appointmentData');
+
+                // Inform the user and redirect to the after confirmation page
+                alert('Appointment confirmed! Redirecting...');
+                window.location.href = 'main.html';
+            } else {
+                alert('No appointment data found.');
+            }
+        }
+    </script>
+</body>
+</html>
